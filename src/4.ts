@@ -5,7 +5,7 @@ class Key {
         this.signature = Math.random();
     }
 
-    public getSignature() {
+    public getSignature(): number {
         return this.signature;
     }
 }
@@ -19,11 +19,11 @@ class Person {
 }
 
 abstract class House {
-    public door: boolean;
+    public door: boolean = false;
     public tenants: Person[] = [];
     constructor(public key: Key) {}
 
-    public comeIn(person: Person) {
+    public comeIn(person: Person): void {
         if(this.door) {
             this.tenants.push(person)
         }
